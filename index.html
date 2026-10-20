@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepon - Juego de Batalla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section id="seleccionar-mascota">
+        <h1 class="title">MOKEPON</h1>
+        <p class="subtitle">Selecciona tu compañero de batalla</p>
+        
+        <div id="contenedor-tarjetas" class="tarjetas-grid">
+        </div>
+
+        <button id="boton-mascota" class="btn-principal">¡Seleccionar y Batallar!</button>
+    </section>
+
+    <section id="seleccionar-ataque">
+        <h1 class="title">ARENA DE BATALLA</h1>
+        <p class="subtitle">Elige tus ataques sabiamente</p>
+        
+        <div class="arena">
+            <div class="jugador-box">
+                <span class="avatar-emoji" id="emoji-jugador">❓</span>
+                <h3 class="nombre-mokepon" id="mascota-jugador">Tu Mokepon</h3>
+                <div class="vidas-count" id="vidas-jugador">❤️❤️❤️</div>
+            </div>
+
+            <div class="vs-text">VS</div>
+
+            <div class="jugador-box">
+                <span class="avatar-emoji" id="emoji-enemigo">❓</span>
+                <h3 class="nombre-mokepon" id="mascota-enemigo">Mokepon Enemigo</h3>
+                <div class="vidas-count" id="vidas-enemigo">❤️❤️❤️</div>
+            </div>
+        </div>
+
+        <div id="contenedor-ataques" class="ataques-container">
+        </div>
+
+        <div class="historial-combate">
+            <div id="resultado-combate">¡La batalla acaba de comenzar!</div>
+            <div id="detalle-ataques">Haz clic en un ataque arriba para iniciar el turno.</div>
+        </div>
+
+        <section id="reiniciar">
+            <button id="boton-reiniciar" class="btn-principal btn-reiniciar">🎮 Jugar de Nuevo</button>
+        </section>
+    </section>
+
+    <script src="js/mokepon.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: #0f172a;
+color: #f8fafc;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+
+.title {
+font-size: 3rem;
+font-weight: 800;
+background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 8px;
+text-align: center;
+letter-spacing: -1px;
+}
+
+.subtitle {
+font-size: 1.25rem;
+color: #94a3b8;
+margin-bottom: 28px;
+text-align: center;
+font-weight: 400;
+}
+
+#seleccionar-mascota {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+max-width: 900px;
+}
+
+.tarjetas-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+width: 100%;
+margin-bottom: 30px;
+}
+
+.tarjeta-label {
+position: relative;
+cursor: pointer;
+}
+
+.tarjeta-label input[type="radio"] {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+clip-path: inset(50%);
+border: 0;
+}
+
+.tarjeta-card {
+background: #1e293b;
+border: 2px solid #334155;
+border-radius: 16px;
+padding: 24px;
+display: flex;
+flex-direction: column;
+align-items: center;
+transition: all 0.25s ease;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-label input[type="radio"]:focus-visible + .tarjeta-card {
+outline: 3px solid #f8fafc;
+outline-offset: 4px;
+}
+
+.tarjeta-card:hover {
+transform: translateY(-5px);
+border-color: #38bdf8;
+box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+.tarjeta-label input[type="radio"]:checked + .tarjeta-card {
+border-color: #38bdf8;
+background: linear-gradient(180deg, #1e293b 0%, #0f2b48 100%);
+box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+transform: scale(1.03);
+}
+
+.avatar-emoji {
+font-size: 4.5rem;
+margin-bottom: 12px;
+filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+.nombre-mokepon {
+font-size: 1.4rem;
+font-weight: 700;
+color: #f1f5f9;
+margin-bottom: 6px;
+}
+
+.tipo-badge {
+font-size: 0.8rem;
+font-weight: 600;
+padding: 4px 12px;
+border-radius: 20px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+.tipo-agua { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+.tipo-tierra { background: rgba(74, 222, 128, 0.2); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.4); }
+.tipo-fuego { background: rgba(251, 113, 133, 0.2); color: #fb7185; border: 1px solid rgba(251, 113, 133, 0.4); }
+
+.btn-principal {
+background: linear-gradient(135deg, #06b6d4, #3b82f6);
+color: white;
+font-size: 1.1rem;
+font-weight: 700;
+padding: 14px 40px;
+border: none;
+border-radius: 12px;
+cursor: pointer;
+transition: all 0.2s ease;
+box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
+.btn-principal:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(6, 182, 212, 0.5);
+}
+
+.btn-principal:active {
+transform: translateY(0);
+}
+
+.btn-principal:focus-visible,
+.btn-ataque:focus-visible {
+outline: 3px solid #f8fafc;
+outline-offset: 3px;
+}
+
+/* Sección de Combate */
+#seleccionar-ataque {
+display: none;
+flex-direction: column;
+align-items: center;
+width: 100%;
+max-width: 900px;
+}
+
+.arena {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+background: #1e293b;
+border-radius: 20px;
+padding: 24px;
+margin-bottom: 24px;
+border: 1px solid #334155;
+box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.jugador-box {
+display: flex;
+flex-direction: column;
+align-items: center;
+flex: 1;
+}
+
+.vs-text {
+font-size: 1.8rem;
+font-weight: 800;
+color: #64748b;
+margin: 0 15px;
+}
+
+.vidas-count {
+font-size: 1.5rem;
+font-weight: 700;
+color: #fb7185;
+margin-top: 8px;
+}
+
+.ataques-container {
+display: flex;
+gap: 12px;
+justify-content: center;
+flex-wrap: wrap;
+margin-bottom: 24px;
+width: 100%;
+}
+
+.btn-ataque {
+background: #334155;
+color: #f8fafc;
+font-size: 1rem;
+font-weight: 600;
+padding: 12px 24px;
+border: 2px solid #475569;
+border-radius: 12px;
+cursor: pointer;
+transition: all 0.2s ease;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.btn-ataque:hover:not(:disabled) {
+background: #475569;
+border-color: #38bdf8;
+transform: translateY(-2px);
+}
+
+.btn-ataque:disabled {
+opacity: 0.4;
+cursor: not-allowed;
+}
+
+/* Panel de Logs de Combate */
+.historial-combate {
+width: 100%;
+background: #0f172a;
+border: 1px solid #334155;
+border-radius: 16px;
+padding: 16px 24px;
+margin-bottom: 24px;
+text-align: center;
+min-height: 90px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+#resultado-combate {
+font-size: 1.25rem;
+font-weight: 700;
+color: #38bdf8;
+margin-bottom: 6px;
+}
+
+#detalle-ataques {
+font-size: 0.95rem;
+color: #94a3b8;
+}
+
+#reiniciar {
+display: none;
+}
+
+.btn-reiniciar {
+background: linear-gradient(135deg, #f43f5e, #e11d48);
+box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3);
+}
+
+.btn-reiniciar:hover {
+box-shadow: 0 8px 20px rgba(244, 63, 94, 0.5);
+}
+
+@media (max-width: 640px) {
+.arena {
+flex-direction: column;
+gap: 16px;
+}
+.vs-text {
+margin: 8px 0;
+}
+.title {
+font-size: 2.2rem;
+}
+}
